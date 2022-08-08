@@ -124,7 +124,7 @@ function install_mainsail_macros() {
 }
 
 function download_mainsail_macros() {
-  local ms_cfg="https://raw.githubusercontent.com/mainsail-crew/MainsailOS/master/src/modules/mainsail/filesystem/home/pi/klipper_config/mainsail.cfg"
+  local ms_cfg="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/master-sg/src/modules/mainsail/filesystem/home/pi/klipper_config/mainsail.cfg"
   local configs path
   configs=$(find "${KLIPPER_CONFIG}" -type f -name "printer.cfg" | sort)
 
@@ -331,7 +331,7 @@ function print_theme_list() {
 
 function ms_theme_installer_menu() {
   local theme_list theme_author theme_repo theme_name theme_note theme_url
-  local theme_csv_url="https://raw.githubusercontent.com/mainsail-crew/docs/master/_data/themes.csv"
+  local theme_csv_url="https://raw.githubusercontent.com/MakerPi-3D-Firmware/docs/master-sg/_data/themes.csv"
   theme_list=$(curl -s -L "${theme_csv_url}")
 
   top_border
@@ -486,11 +486,11 @@ function get_mainsail_download_url() {
 
   ### latest download url including pre-releases (alpha, beta, rc)
   latest_tag=$(echo "${tags}" | head -1)
-  latest_url="https://github.com/mainsail-crew/mainsail/releases/download/${latest_tag}/mainsail.zip"
+  latest_url="https://github.com/MakerPi-3D-Firmware/mainsail/releases/download/${latest_tag}/mainsail.zip"
 
   ### get stable mainsail download url
   stable_tag=$(echo "${tags}" | grep -E "^v([0-9]+\.?){3}$" | head -1)
-  stable_url="https://github.com/mainsail-crew/mainsail/releases/download/${stable_tag}/mainsail.zip"
+  stable_url="https://github.com/MakerPi-3D-Firmware/mainsail/releases/download/${stable_tag}/mainsail.zip"
 
   read_kiauh_ini "${FUNCNAME[0]}"
   if [[ ${mainsail_install_unstable} == "true" ]]; then
@@ -585,7 +585,7 @@ function patch_mainsail_update_manager() {
 [update_manager mainsail]
 type: web
 channel: stable
-repo: mainsail-crew/mainsail
+repo: MakerPi-3D-Firmware/mainsail
 path: ~/mainsail
 MOONRAKER_CONF
 

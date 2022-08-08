@@ -24,8 +24,8 @@ function change_klipper_repo_menu() {
   while IFS="," read -r repo branch; do
     repo=$(echo "${repo}" | sed -r "s/^http(s)?:\/\/github.com\///" | sed "s/\.git$//" )
     repos+=("${repo}")
-    ### if branch is not given, default to 'master'
-    [[ -z ${branch} ]] && branch="master"
+    ### if branch is not given, default to 'master-sg'
+    [[ -z ${branch} ]] && branch="master-sg"
     branches+=("${branch}")
   done < <(grep -E "^[^#]" "${repo_file}")
 

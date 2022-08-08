@@ -124,7 +124,7 @@ function install_fluidd_macros() {
 }
 
 function download_fluidd_macros() {
-  local fluidd_cfg="https://raw.githubusercontent.com/fluidd-core/FluiddPI/master/src/modules/fluidd/filesystem/home/pi/klipper_config/fluidd.cfg"
+  local fluidd_cfg="https://raw.githubusercontent.com/MakerPi-3D-Firmware/FluiddPI/master-sg/src/modules/fluidd/filesystem/home/pi/klipper_config/fluidd.cfg"
   local configs path
   configs=$(find "${KLIPPER_CONFIG}" -type f -name "printer.cfg" | sort)
 
@@ -319,11 +319,11 @@ function get_fluidd_download_url() {
 
   ### latest download url including pre-releases (alpha, beta, rc)
   latest_tag=$(echo "${tags}" | head -1)
-  latest_url="https://github.com/fluidd-core/fluidd/releases/download/${latest_tag}/fluidd.zip"
+  latest_url="https://github.com/MakerPi-3D-Firmware/fluidd/releases/download/${latest_tag}/fluidd.zip"
 
   ### get stable fluidd download url
   stable_tag=$(echo "${tags}" | grep -E "^v([0-9]+\.?){3}$" | head -1)
-  stable_url="https://github.com/fluidd-core/fluidd/releases/download/${stable_tag}/fluidd.zip"
+  stable_url="https://github.com/MakerPi-3D-Firmware/fluidd/releases/download/${stable_tag}/fluidd.zip"
 
   read_kiauh_ini "${FUNCNAME[0]}"
   if [[ ${fluidd_install_unstable} == "true" ]]; then
@@ -411,7 +411,7 @@ function patch_fluidd_update_manager() {
 [update_manager fluidd]
 type: web
 channel: stable
-repo: fluidd-core/fluidd
+repo: MakerPi-3D-Firmware/fluidd
 path: ~/fluidd
 MOONRAKER_CONF
 

@@ -16,9 +16,9 @@ set -e
 #=================================================#
 
 function install_mjpg-streamer() {
-  local webcamd="https://raw.githubusercontent.com/mainsail-crew/MainsailOS/master/src/modules/mjpgstreamer/filesystem/root/usr/local/bin/webcamd"
-  local webcam_txt="https://raw.githubusercontent.com/mainsail-crew/MainsailOS/master/src/modules/mjpgstreamer/filesystem/home/pi/klipper_config/webcam.txt"
-  local repo="https://github.com/jacksonliam/mjpg-streamer.git"
+  local webcamd="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/master-sg/src/modules/mjpgstreamer/filesystem/root/usr/local/bin/webcamd"
+  local webcam_txt="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/master-sg/src/modules/mjpgstreamer/filesystem/home/pi/klipper_config/webcam.txt"
+  local repo="https://github.com/MakerPi-3D-Firmware/mjpg-streamer.git"
   local service="${KIAUH_SRCDIR}/resources/webcamd.service"
 
   ### return early if webcamd.service already exists

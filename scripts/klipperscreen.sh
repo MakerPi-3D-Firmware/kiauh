@@ -56,6 +56,10 @@ function klipperscreen_setup() {
     exit 1
   fi
 
+  cd "${KLIPPERSCREEN_DIR}"
+  git checkout master-sg
+  cd ..
+
   status_msg "Installing KlipperScreen ..."
   if "${KLIPPERSCREEN_DIR}"/scripts/KlipperScreen-install.sh; then
     ok_msg "KlipperScreen successfully installed!"
@@ -120,8 +124,8 @@ function update_klipperscreen() {
 
   do_action_service "stop" "KlipperScreen"
   cd "${KLIPPERSCREEN_DIR}"
-  git pull origin master -q && ok_msg "Fetch successfull!"
-  git checkout -f master && ok_msg "Checkout successfull"
+  git pull origin master-sg -q && ok_msg "Fetch successfull!"
+  git checkout -f master-sg && ok_msg "Checkout successfull"
 
   if [[ $(md5sum "${KLIPPERSCREEN_DIR}/scripts/KlipperScreen-requirements.txt" | cut -d " " -f1) != "${old_md5}" ]]; then
     status_msg "New dependecies detected..."
@@ -175,7 +179,7 @@ function get_remote_klipperscreen_commit() {
 
   local commit
   cd "${KLIPPERSCREEN_DIR}" && git fetch origin -q
-  commit=$(git describe origin/master --always --tags | cut -d "-" -f 1,2)
+  commit=$(git describe origin/master-sg --always --tags | cut -d "-" -f 1,2)
   echo "${commit}"
 }
 
@@ -218,7 +222,7 @@ function patch_klipperscreen_update_manager() {
 [update_manager KlipperScreen]
 type: git_repo
 path: ${HOME}/KlipperScreen
-origin: https://github.com/jordanruthe/KlipperScreen.git
+origin: https://github.com/MakerPi-3D-Firmware/KlipperScreen.git
 env: ${HOME}/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh

@@ -67,10 +67,10 @@ function print_klipper_repo() {
 
   if [[ ${klipper_status} == "Not installed!" ]]; then
     repo="${red}-${white}"
-  elif [[ -n ${repo} && ${repo} != "KLIPPER3D/KLIPPER"  ]]; then
+  elif [[ -n ${repo} && ${repo} != "MAKERPI-3D-FIRMWARE/KLIPPER"  ]]; then
     repo="${cyan}custom${white}"
   else
-    repo="${cyan}Klipper3d/klipper${white}"
+    repo="${cyan}MakerPi-3D-Firmware/klipper${white}"
   fi
 
   printf "%-28s" "${repo}"

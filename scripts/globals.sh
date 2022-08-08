@@ -33,38 +33,38 @@ function set_globals() {
   #================== KLIPPER ===================#
   KLIPPY_ENV="${HOME}/klippy-env"
   KLIPPER_DIR="${HOME}/klipper"
-  KLIPPER_REPO="https://github.com/Klipper3d/klipper.git"
+  KLIPPER_REPO="https://github.com/MakerPi-3D-Firmware/klipper.git"
   KLIPPER_LOGS="${HOME}/klipper_logs"
   KLIPPER_CONFIG="$(get_klipper_cfg_dir)" # default: ${HOME}/klipper_config
 
   #================= MOONRAKER ==================#
   MOONRAKER_ENV="${HOME}/moonraker-env"
   MOONRAKER_DIR="${HOME}/moonraker"
-  MOONRAKER_REPO="https://github.com/Arksine/moonraker.git"
+  MOONRAKER_REPO="https://github.com/MakerPi-3D-Firmware/moonraker.git"
 
   #================= MAINSAIL ===================#
   MAINSAIL_DIR="${HOME}/mainsail"
-  MAINSAIL_REPO_API="https://api.github.com/repos/mainsail-crew/mainsail/releases"
-  MAINSAIL_TAGS="https://api.github.com/repos/mainsail-crew/mainsail/tags"
+  MAINSAIL_REPO_API="https://api.github.com/repos/MakerPi-3D-Firmware/mainsail/releases"
+  MAINSAIL_TAGS="https://api.github.com/repos/MakerPi-3D-Firmware/mainsail/tags"
 
   #================== FLUIDD ====================#
   FLUIDD_DIR="${HOME}/fluidd"
-  FLUIDD_REPO_API="https://api.github.com/repos/fluidd-core/fluidd/releases"
-  FLUIDD_TAGS="https://api.github.com/repos/fluidd-core/fluidd/tags"
+  FLUIDD_REPO_API="https://api.github.com/repos/MakerPi-3D-Firmware/fluidd/releases"
+  FLUIDD_TAGS="https://api.github.com/repos/MakerPi-3D-Firmware/fluidd/tags"
 
   #=============== KLIPPERSCREEN ================#
   KLIPPERSCREEN_ENV="${HOME}/.KlipperScreen-env"
   KLIPPERSCREEN_DIR="${HOME}/KlipperScreen"
-  KLIPPERSCREEN_REPO="https://github.com/jordanruthe/KlipperScreen.git"
+  KLIPPERSCREEN_REPO="https://github.com/MakerPi-3D-Firmware/KlipperScreen.git"
 
   #========== MOONRAKER-TELEGRAM-BOT ============#
   TELEGRAM_BOT_ENV="${HOME}/moonraker-telegram-bot-env"
   TELEGRAM_BOT_DIR="${HOME}/moonraker-telegram-bot"
-  TELEGRAM_BOT_REPO="https://github.com/nlef/moonraker-telegram-bot.git"
+  TELEGRAM_BOT_REPO="https://github.com/MakerPi-3D-Firmware/moonraker-telegram-bot.git"
 
   #=============== PRETTY-GCODE =================#
   PGC_DIR="${HOME}/pgcode"
-  PGC_REPO="https://github.com/Kragrathea/pgcode"
+  PGC_REPO="https://github.com/MakerPi-3D-Firmware/pgcode"
 
   #================== NGINX =====================#
   NGINX_SA="/etc/nginx/sites-available"

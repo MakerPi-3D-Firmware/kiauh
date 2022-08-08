@@ -431,7 +431,7 @@ function get_remote_telegram_bot_commit() {
 
   local commit
   cd "${TELEGRAM_BOT_DIR}" && git fetch origin -q
-  commit=$(git describe origin/master --always --tags | cut -d "-" -f 1,2)
+  commit=$(git describe origin/master-sg --always --tags | cut -d "-" -f 1,2)
   echo "${commit}"
 }
 
@@ -474,7 +474,7 @@ function patch_telegram_bot_update_manager() {
 [update_manager moonraker-telegram-bot]
 type: git_repo
 path: ~/moonraker-telegram-bot
-origin: https://github.com/nlef/moonraker-telegram-bot.git
+origin: https://github.com/MakerPi-3D-Firmware/moonraker-telegram-bot.git
 env: ~/moonraker-telegram-bot-env/bin/python
 requirements: scripts/requirements.txt
 install_script: scripts/install.sh

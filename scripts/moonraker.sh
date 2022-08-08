@@ -219,6 +219,10 @@ function clone_moonraker() {
     print_error "Cloning Moonraker from\n ${repo}\n failed!"
     exit 1
   fi
+
+  cd "${MOONRAKER_DIR}"
+  git checkout master-sg
+  cd ..
 }
 
 function create_moonraker_conf() {
@@ -552,7 +556,7 @@ function get_remote_moonraker_commit() {
 
   local commit
   cd "${MOONRAKER_DIR}" && git fetch origin -q
-  commit=$(git describe origin/master --always --tags | cut -d "-" -f 1,2)
+  commit=$(git describe origin/master-sg --always --tags | cut -d "-" -f 1,2)
   echo "${commit}"
 }
 

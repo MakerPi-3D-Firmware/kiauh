@@ -31,14 +31,14 @@ function settings_ui() {
   ### custom repository
   custom_repo=$(echo "${custom_repo}" | sed "s/https:\/\/github\.com\///" | sed "s/\.git$//" )
   if [[ -z ${custom_repo} ]]; then
-    custom_repo="${cyan}Klipper3D/klipper${white}"
+    custom_repo="${cyan}MakerPi-3D-Firmware/klipper${white}"
   else
     custom_repo="${cyan}${custom_repo}${white}"
   fi
 
   ### custom repository branch
   if [[ -z ${custom_branch} ]]; then
-    custom_branch="${cyan}master${white}"
+    custom_branch="${cyan}master-sg${white}"
   else
     custom_branch="${cyan}${custom_branch}${white}"
   fi
