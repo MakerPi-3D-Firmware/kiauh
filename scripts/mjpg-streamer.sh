@@ -16,8 +16,8 @@ set -e
 #=================================================#
 
 function install_mjpg-streamer() {
-  local webcamd="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/master-sg/src/modules/mjpgstreamer/filesystem/root/usr/local/bin/webcamd"
-  local webcam_txt="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/master-sg/src/modules/mjpgstreamer/filesystem/home/pi/klipper_config/webcam.txt"
+  local webcamd="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/0.6.1/src/modules/mjpgstreamer/filesystem/root/usr/local/bin/webcamd"
+  local webcam_txt="https://raw.githubusercontent.com/MakerPi-3D-Firmware/MainsailOS/0.6.1/src/modules/mjpgstreamer/filesystem/home/pi/klipper_config/webcam.txt"
   local repo="https://github.com/MakerPi-3D-Firmware/mjpg-streamer.git"
   local service="${KIAUH_SRCDIR}/resources/webcamd.service"
 
@@ -48,6 +48,9 @@ function install_mjpg-streamer() {
     print_error "Cloning MJPG-Streamer from\n ${repo}\n failed!"
     exit 1
   fi
+  cd "${HOME}/mjpg-streamer"
+  git checkout master-sg
+  cd ..
   ok_msg "Cloning complete!"
 
   ### step 2: compiling mjpg-streamer
